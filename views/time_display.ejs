@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Converter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image" content="<%= 'https://c406-2405-201-5c06-7a4e-814d-723f-c6c1-e03b.ngrok-free.app/og-image/' + timezone.split('/').map(encodeURIComponent).join('/') %>">
+    <!-- HTML Meta Tags -->
+<title>Time Converter for <%= timezone %></title>
+<meta name="description" content="Convert time for <%= timezone %>">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="<%= 'https://c406-2405-201-5c06-7a4e-814d-723f-c6c1-e03b.ngrok-free.app/' + timezone %>">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Time Converter for <%= timezone %>">
+<meta property="og:description" content="Convert time for <%= timezone %>">
+<meta property="og:image" content="<%= 'https://c406-2405-201-5c06-7a4e-814d-723f-c6c1-e03b.ngrok-free.app/og-image/' + timezone.split('/').map(encodeURIComponent).join('/') %>">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="8122-2405-201-5c06-7a4e-814d-723f-c6c1-e03b.ngrok-free.app">
+<meta property="twitter:url" content="<%= 'https://c406-2405-201-5c06-7a4e-814d-723f-c6c1-e03b.ngrok-free.app/' + timezone %>">
+<meta name="twitter:title" content="Time Converter for <%= timezone %>">
+<meta name="twitter:description" content="Convert time for <%= timezone %>">
+<meta name="twitter:image" content="<%= 'https://c406-2405-201-5c06-7a4e-814d-723f-c6c1-e03b.ngrok-free.app/og-image/' + timezone.split('/').map(encodeURIComponent).join('/') %>">
+
+<!-- Meta Tags Generated via https://www.opengraph.xyz -->
+
+</head>
+<body>
+    <h1>Time Conversion</h1>
+    <p>Your local time: <span id="localTime">Calculating...</span></p>
+    <p>Time in <%= timezone %>: <span id="convertedTime">Calculating...</span></p>
+
+    <script>
+        // Get the current time in the user's local time zone using Moment.js
+        var localTime = moment();
+        document.getElementById("localTime").innerText = localTime.format("h:mm a");
+
+        // Convert the local time to the specified time zone using Moment Timezone
+        var convertedTime = localTime.clone().tz("<%= timezone %>");
+        document.getElementById("convertedTime").innerText = convertedTime.format("h:mm a");
+    </script>
+</body>
+</html>

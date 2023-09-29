@@ -1,0 +1,28 @@
+{
+  "name": "share_time_zone_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "geoip-lite": "^1.4.7",
+    "moment-timezone": "^0.5.43",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
